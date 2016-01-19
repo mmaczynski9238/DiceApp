@@ -14,12 +14,35 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var diceImage: UIImageView!
     
+    @IBOutlet weak var myView: UIView!
     @IBOutlet weak var diceViewTap: UIView!
     /***********************************************/
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        
+        self.initializeGestureRecognizer()
+        
+        
+        var swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        var swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeDown.direction = UISwipeGestureRecognizerDirection.Down
+        self.view.addGestureRecognizer(swipeDown)
+        
+        var swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        var swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        
+        self.view.addGestureRecognizer(swipeLeft)
         
     }
     
@@ -30,65 +53,210 @@ class ViewController: UIViewController {
     /***********************************************/
     
     
-   
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Right:
+                let randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
+                let randomNumber = numbers[randomIndex]
+                DiceLabel.text = "\(randomNumber)"
+                if randomNumber == 1
+                {
+                    diceImage.image = UIImage(named: "dice1new")
+                }
+                else if randomNumber == 2
+                {
+                    diceImage.image = UIImage(named: "dice2new")
+                }
+                else if randomNumber == 3
+                {
+                    diceImage.image = UIImage(named: "dice3new")
+                }
+                else if randomNumber == 4
+                {
+                    diceImage.image = UIImage(named: "dice4new")
+                }
+                else if randomNumber == 5
+                {
+                    diceImage.image = UIImage(named: "dice5new")
+                }
+                else if randomNumber == 6
+                {
+                    diceImage.image = UIImage(named: "dice6new")
+                }
+                /***********************************************/
+            case UISwipeGestureRecognizerDirection.Down:
+                let randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
+                let randomNumber = numbers[randomIndex]
+                DiceLabel.text = "\(randomNumber)"
+                if randomNumber == 1
+                {
+                    diceImage.image = UIImage(named: "dice1new")
+                }
+                else if randomNumber == 2
+                {
+                    diceImage.image = UIImage(named: "dice2new")
+                }
+                else if randomNumber == 3
+                {
+                    diceImage.image = UIImage(named: "dice3new")
+                }
+                else if randomNumber == 4
+                {
+                    diceImage.image = UIImage(named: "dice4new")
+                }
+                else if randomNumber == 5
+                {
+                    diceImage.image = UIImage(named: "dice5new")
+                }
+                else if randomNumber == 6
+                {
+                    diceImage.image = UIImage(named: "dice6new")
+                }
+                /***********************************************/
+            case UISwipeGestureRecognizerDirection.Left:
+                let randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
+                let randomNumber = numbers[randomIndex]
+                DiceLabel.text = "\(randomNumber)"
+                if randomNumber == 1
+                {
+                    diceImage.image = UIImage(named: "dice1new")
+                }
+                else if randomNumber == 2
+                {
+                    diceImage.image = UIImage(named: "dice2new")
+                }
+                else if randomNumber == 3
+                {
+                    diceImage.image = UIImage(named: "dice3new")
+                }
+                else if randomNumber == 4
+                {
+                    diceImage.image = UIImage(named: "dice4new")
+                }
+                else if randomNumber == 5
+                {
+                    diceImage.image = UIImage(named: "dice5new")
+                }
+                else if randomNumber == 6
+                {
+                    diceImage.image = UIImage(named: "dice6new")
+                }
+                /***********************************************/
+            case UISwipeGestureRecognizerDirection.Up:
+                let randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
+                let randomNumber = numbers[randomIndex]
+                DiceLabel.text = "\(randomNumber)"
+                if randomNumber == 1
+                {
+                    diceImage.image = UIImage(named: "dice1new")
+                }
+                else if randomNumber == 2
+                {
+                    diceImage.image = UIImage(named: "dice2new")
+                }
+                else if randomNumber == 3
+                {
+                    diceImage.image = UIImage(named: "dice3new")
+                }
+                else if randomNumber == 4
+                {
+                    diceImage.image = UIImage(named: "dice4new")
+                }
+                else if randomNumber == 5
+                {
+                    diceImage.image = UIImage(named: "dice5new")
+                }
+                else if randomNumber == 6
+                {
+                    diceImage.image = UIImage(named: "dice6new")
+                }
+                /***********************************************/
+            default:
+                break
+            }
+        }
+    }
     
+    /***********************************************/
+
+    func initializeGestureRecognizer()
+    {
+    var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("recognizeTapGesture:"))
+    myView.addGestureRecognizer(tapGesture)
+    }
+    /***********************************************/
+
     
-    @IBAction func RollButton(sender: UIButton) {
-        
-        
-        
+    func recognizeTapGesture(sender: UIGestureRecognizer)
+    {
         let randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
         let randomNumber = numbers[randomIndex]
-
-        
         DiceLabel.text = "\(randomNumber)"
-        
-        
         if randomNumber == 1
         {
-            
-            
-            diceImage.image = UIImage(named: "dice1")
-            
+            diceImage.image = UIImage(named: "dice1new")
         }
         else if randomNumber == 2
         {
-            
-            
-            diceImage.image = UIImage(named: "dice2")
-            
+            diceImage.image = UIImage(named: "dice2new")
         }
         else if randomNumber == 3
         {
-            
-            
-            diceImage.image = UIImage(named: "dice3")
-            
+            diceImage.image = UIImage(named: "dice3new")
         }
         else if randomNumber == 4
         {
-            
-            
-            diceImage.image = UIImage(named: "dice4")
-            
+            diceImage.image = UIImage(named: "dice4new")
         }
         else if randomNumber == 5
         {
-            
-            
-            diceImage.image = UIImage(named: "dice5")
-            
+            diceImage.image = UIImage(named: "dice5new")
         }
         else if randomNumber == 6
         {
-            
-            
-            diceImage.image = UIImage(named: "dice6")
-            
+            diceImage.image = UIImage(named: "dice6new")
+        }
+    }
+    
+    /***********************************************/
+    /***********************************************/
+
+    
+    
+    @IBAction func RollButton(sender: UIButton) {
+        let randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
+        let randomNumber = numbers[randomIndex]
+        DiceLabel.text = "\(randomNumber)"
+        if randomNumber == 1
+        {
+            diceImage.image = UIImage(named: "dice1new")
+        }
+        else if randomNumber == 2
+        {
+            diceImage.image = UIImage(named: "dice2new")
+        }
+        else if randomNumber == 3
+        {
+            diceImage.image = UIImage(named: "dice3new")
+        }
+        else if randomNumber == 4
+        {
+            diceImage.image = UIImage(named: "dice4new")
+        }
+        else if randomNumber == 5
+        {
+            diceImage.image = UIImage(named: "dice5new")
+        }
+        else if randomNumber == 6
+        {
+            diceImage.image = UIImage(named: "dice6new")
         }
         
-        
     }
+    /***********************************************/
 
 }

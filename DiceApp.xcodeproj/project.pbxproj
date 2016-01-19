@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					F545D3FF1C45939F0094A4F1 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 4BD2832G2G;
 					};
 					F545D4131C45939F0094A4F1 = {
 						CreatedOnToolsVersion = 7.2;
@@ -399,7 +400,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DiceApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JHHS.DiceApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -410,7 +413,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DiceApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JHHS.DiceApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,6 +489,7 @@
 				F545D42A1C45939F0094A4F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F545D42B1C45939F0094A4F1 /* Build configuration list for PBXNativeTarget "DiceAppTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +498,7 @@
 				F545D42D1C45939F0094A4F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F545D42E1C45939F0094A4F1 /* Build configuration list for PBXNativeTarget "DiceAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +507,7 @@
 				F545D4301C45939F0094A4F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
