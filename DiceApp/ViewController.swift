@@ -27,24 +27,47 @@ class ViewController: UIViewController {
         self.initializeGestureRecognizer()
         
         
-        var swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.view.addGestureRecognizer(swipeRight)
         
-        var swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeDown.direction = UISwipeGestureRecognizerDirection.Down
         self.view.addGestureRecognizer(swipeDown)
         
-        var swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeUp.direction = UISwipeGestureRecognizerDirection.Up
         self.view.addGestureRecognizer(swipeUp)
         
-        var swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         
         self.view.addGestureRecognizer(swipeLeft)
         
     }
+    /***********************************************/
+    /***********************************************/
+    
+    
+    @IBAction func instructionsButton(sender: UIButton) {
+        
+        let alertController = UIAlertController(title: "Instructions", message: "How to Roll the Dice: \n \n Swipe Left, Right, Up, or Down \n Tap the Dice \n Tap the Button", preferredStyle: .Alert)
+        
+        /*let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            // ...
+        }
+        alertController.addAction(cancelAction)*/
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+            // ...
+        }
+        alertController.addAction(OKAction)
+        
+        self.presentViewController(alertController, animated: true) {
+            // ...
+        }
+    }
+    
     
     /***********************************************/
     
@@ -118,8 +141,8 @@ class ViewController: UIViewController {
                 }
                 /***********************************************/
             case UISwipeGestureRecognizerDirection.Left:
-                let randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
-                let randomNumber = numbers[randomIndex]
+                var randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
+                var randomNumber = numbers[randomIndex]
                 DiceLabel.text = "\(randomNumber)"
                 if randomNumber == 1
                 {

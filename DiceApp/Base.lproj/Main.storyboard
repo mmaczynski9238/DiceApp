@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kqZ-V3-V9E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,16 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="T70-R3-xxf">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nbv-Vh-6UJ">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="768" id="ghQ-gL-usB"/>
-                                    <constraint firstAttribute="height" constant="1024" id="ntz-uq-gwR"/>
-                                </constraints>
-                            </imageView>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T70-R3-xxf">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="768" id="ghQ-gL-usB"/>
+                                            <constraint firstAttribute="height" constant="1024" id="ntz-uq-gwR"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgH-Na-AKO">
-                                <rect key="frame" x="310" y="374" width="149" height="34"/>
+                                <rect key="frame" x="310" y="380" width="149" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Roll The Dice">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -36,29 +39,27 @@
                                     <action selector="RollButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z4s-FD-QAl"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vur-cl-189">
-                                <rect key="frame" x="279" y="107" width="211" height="211"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MA6-Hw-knh">
-                                <rect key="frame" x="20" y="20" width="36" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95y-vy-jq8">
-                                <rect key="frame" x="279" y="107" width="211" height="211"/>
+                                <rect key="frame" x="259" y="107" width="250" height="250"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vur-cl-189">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                    </imageView>
+                                </subviews>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAm-lb-eOt">
+                                <rect key="frame" x="667" y="974" width="81" height="30"/>
+                                <state key="normal" title="Instructions"/>
+                                <connections>
+                                    <action selector="instructionsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fhx-dS-VP2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="T70-R3-xxf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Swf-5f-w7t"/>
-                            <constraint firstItem="T70-R3-xxf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="gER-1i-FpY"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d74-Dw-aSX"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
-                        <outlet property="DiceLabel" destination="MA6-Hw-knh" id="JbW-QD-fsn"/>
                         <outlet property="diceImage" destination="vur-cl-189" id="nYi-8r-CvI"/>
                         <outlet property="myView" destination="95y-vy-jq8" id="Cqe-fL-3Bw"/>
                     </connections>
@@ -66,47 +67,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="3B7-ol-TLh"/>
             </objects>
-            <point key="canvasLocation" x="1891" y="371"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="2AG-5v-31C">
-            <objects>
-                <viewController id="zax-6q-U9Z" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wXc-XG-1IU"/>
-                        <viewControllerLayoutGuide type="bottom" id="ls7-7s-2Fo"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dBi-d5-0nt">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GcO-rf-00w" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1072" y="371"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="zef-pc-rgk">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kqZ-V3-V9E" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wwE-ac-UF2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vF3-15-Zrb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gEx-vb-zLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="344" y="159"/>
+            <point key="canvasLocation" x="2461" y="249"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="background" width="640" height="960"/>
-    </resources>
 </document>
