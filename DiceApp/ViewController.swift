@@ -53,11 +53,6 @@ class ViewController: UIViewController {
         
         let alertController = UIAlertController(title: "Instructions", message: "How to Roll the Dice: \n \n Swipe Left, Right, Up, or Down \n Tap the Dice \n Tap the Button", preferredStyle: .Alert)
         
-        /*let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-            // ...
-        }
-        alertController.addAction(cancelAction)*/
-        
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             // ...
         }
@@ -85,7 +80,6 @@ class ViewController: UIViewController {
             case UISwipeGestureRecognizerDirection.Right:
                 let randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
                 let randomNumber = numbers[randomIndex]
-                DiceLabel.text = "\(randomNumber)"
                 if randomNumber == 1
                 {
                     diceImage.image = UIImage(named: "dice1new")
@@ -114,7 +108,6 @@ class ViewController: UIViewController {
             case UISwipeGestureRecognizerDirection.Down:
                 let randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
                 let randomNumber = numbers[randomIndex]
-                DiceLabel.text = "\(randomNumber)"
                 if randomNumber == 1
                 {
                     diceImage.image = UIImage(named: "dice1new")
@@ -143,7 +136,6 @@ class ViewController: UIViewController {
             case UISwipeGestureRecognizerDirection.Left:
                 var randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
                 var randomNumber = numbers[randomIndex]
-                DiceLabel.text = "\(randomNumber)"
                 if randomNumber == 1
                 {
                     diceImage.image = UIImage(named: "dice1new")
@@ -172,7 +164,6 @@ class ViewController: UIViewController {
             case UISwipeGestureRecognizerDirection.Up:
                 let randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
                 let randomNumber = numbers[randomIndex]
-                DiceLabel.text = "\(randomNumber)"
                 if randomNumber == 1
                 {
                     diceImage.image = UIImage(named: "dice1new")
@@ -218,7 +209,6 @@ class ViewController: UIViewController {
     {
         let randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
         let randomNumber = numbers[randomIndex]
-        DiceLabel.text = "\(randomNumber)"
         if randomNumber == 1
         {
             diceImage.image = UIImage(named: "dice1new")
@@ -253,7 +243,6 @@ class ViewController: UIViewController {
     @IBAction func RollButton(sender: UIButton) {
         let randomIndex = Int(arc4random_uniform(UInt32(numbers.count)))
         let randomNumber = numbers[randomIndex]
-        DiceLabel.text = "\(randomNumber)"
         if randomNumber == 1
         {
             diceImage.image = UIImage(named: "dice1new")
