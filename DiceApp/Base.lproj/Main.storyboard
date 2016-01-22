@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nbv-Vh-6UJ">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T70-R3-xxf">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="T70-R3-xxf">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -40,16 +40,18 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95y-vy-jq8">
-                                <rect key="frame" x="259" y="107" width="250" height="250"/>
+                                <rect key="frame" x="259" y="107" width="300" height="250"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vur-cl-189">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dice1new" translatesAutoresizingMaskIntoConstraints="NO" id="vur-cl-189">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                     </imageView>
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAm-lb-eOt">
                                 <rect key="frame" x="667" y="974" width="81" height="30"/>
-                                <state key="normal" title="Instructions"/>
+                                <state key="normal" title="Instructions">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="instructionsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fhx-dS-VP2"/>
                                 </connections>
@@ -70,4 +72,8 @@
             <point key="canvasLocation" x="2461" y="249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="640" height="960"/>
+        <image name="dice1new" width="145" height="145"/>
+    </resources>
 </document>
